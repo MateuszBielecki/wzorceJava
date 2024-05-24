@@ -3,13 +3,11 @@ class MaskotkaSklepu extends DekoratorProduktu {
         super(produkt);
     }
 
-    @Override
     public double getCena() {
         return super.getCena();
     }
 
-    @Override
     public String toString() {
-        return super.toString() + ", Maskotka";
+        return super.toString() + ", Maskotka (0.0 PLN)";
     }
 }

@@ -6,15 +6,19 @@ class Rabat extends DekoratorProduktu {
         this.rabat = rabat;
     }
 
-    @Override
     public double getCena() {
         double cenaProduktu = super.getCena();
-        double cenaZRabatem = cenaProduktu - rabat;
-        return cenaZRabatem < 0 ? 0 : cenaZRabatem;
+        double cenaBezTransportu = cenaProduktu;
+
+        if (this.produkt instanceof Transport) {
+            cenaBezTransportu -= ((Transport) this.produkt).getKosztTransportu();
+        }
+
+        double cenaZRabatem = cenaBezTransportu - this.rabat;
+        return cenaZRabatem < 0.0 ? ((Transport) this.produkt).getKosztTransportu() : cenaZRabatem + ((Transport) this.produkt).getKosztTransportu();
     }
 
-    @Override
     public String toString() {
-        return super.toString() + ", Rabat 10 PLN";
+        return super.toString() + ", Rabat (-" + this.rabat + " PLN)";
     }
 }

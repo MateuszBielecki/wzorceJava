@@ -7,26 +7,21 @@ class ProduktBazowy implements Produkt {
         this.nazwa = nazwa;
     }
 
-    @Override
     public double getCena() {
-        return cena;
+        return this.cena;
     }
 
-    @Override
     public String getNazwa() {
-        return nazwa;
+        return this.nazwa;
     }
 
-    @Override
     public void dodajProdukt(Produkt produkt) {
     }
 
-    @Override
     public void usunProdukt(Produkt produkt) {
     }
 
-    @Override
     public String toString() {
-        return nazwa + ": " + cena + " PLN";
+        return this.nazwa + ": " + this.cena + " PLN";
     }
 }

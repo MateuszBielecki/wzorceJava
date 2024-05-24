@@ -3,13 +3,11 @@ class SmyczDoPendrive extends DekoratorProduktu {
         super(produkt);
     }
 
-    @Override
     public double getCena() {
-        return super.getCena() + 1;
+        return super.getCena() + 1.0;
     }
 
-    @Override
     public String toString() {
-        return super.toString() + ", Smycz do pendrive";
+        return super.toString() + ", Smycz do pendrive (1.0 PLN)";
     }
 }
