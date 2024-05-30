@@ -1,4 +1,4 @@
-abstract class DekoratorProduktu implements Produkt {
+public abstract class DekoratorProduktu implements Produkt {
     protected Produkt produkt;
 
     public DekoratorProduktu(Produkt produkt) {
@@ -23,5 +23,12 @@ abstract class DekoratorProduktu implements Produkt {
 
     public String toString() {
         return this.produkt.toString();
+    }
+
+    protected double getKosztTransportu() {
+        if (this.produkt instanceof DekoratorProduktu) {
+            return ((DekoratorProduktu) this.produkt).getKosztTransportu();
+        }
+        return 0.0;
     }
 }

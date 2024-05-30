@@ -1,4 +1,4 @@
-class Transport extends DekoratorProduktu {
+public class Transport extends DekoratorProduktu {
     private double kosztTransportu;
 
     public Transport(Produkt produkt, double kosztTransportu) {
@@ -7,7 +7,7 @@ class Transport extends DekoratorProduktu {
     }
 
     public double getKosztTransportu() {
-        return this.kosztTransportu;
+        return this.kosztTransportu + super.getKosztTransportu();
     }
 
     public double getCena() {
